@@ -42,7 +42,7 @@ def test_escape_backticks(text, expected):
 
 
 @pytest.mark.parametrize(
-    "issue_title, issue_body, output_dir, expected, should_raise, expected_error",
+    "issue_title, issue_body, output_dir, expected, should_raise",
     [
         (
             "title of issue",
@@ -50,7 +50,6 @@ def test_escape_backticks(text, expected):
             "output",
             "output/title of issue.md",
             False,
-            None,
         ),
         (
             "Issue with / invalid characters",
@@ -58,7 +57,6 @@ def test_escape_backticks(text, expected):
             "output",
             "output/Issue with _ invalid characters.md",
             False,
-            None,
         ),
         (
             "",
@@ -66,7 +64,6 @@ def test_escape_backticks(text, expected):
             "output",
             "",
             True,
-            "File write error",
         ),
     ],
 )
@@ -76,21 +73,18 @@ def test_create_issue_body_file(
     output_dir,
     expected,
     should_raise,
-    expected_error,
 ):
     """Testing create_issue_body_file utility"""
     mocked_open = mock_open()
 
     if should_raise:
-        mocked_open.side_effect = RuntimeError(
-            f"Failed to write file: {expected_error}"
-        )
+        mocked_open.side_effect = RuntimeError("Failed to write file: File write error")
 
     with patch("builtins.open", mocked_open):
         if should_raise:
             with pytest.raises(
                 RuntimeError,
-                match=f"Failed to write file: {expected_error}",
+                match="Failed to write file: File write error",
             ):
                 create_issue_body_file(issue_title, issue_body, output_dir)
         else:
