@@ -27,7 +27,7 @@ def sanitize_filename(filename: str):
     sanitized_chars = []
 
     for c in filename.strip():
-        if c.isalnum() or c in (" ", "-", "_"):
+        if c.isalnum() or c in set([" ", "-", "_"]):
             sanitized_chars.append(c)
         else:
             sanitized_chars.append("_")
