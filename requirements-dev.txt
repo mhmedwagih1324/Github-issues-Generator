@@ -1,8 +1,8 @@
 # Linting
-pylint==2.4.4
+pylint==3.3.1
 
 # Testing
 pytest==8.3.3
 
 # Other useful development tools
-black==23.3.0  # For automatic code formatting
+black==24.8.0  # For automatic code formatting

@@ -116,13 +116,13 @@ def test_create_issue_body_file(
             "Another Issue",
             "path/to/file.md",
             "Milestone 1",
-            'gh issue create --title "Another Issue" --body-file "path/to/file.md" --milestone "Milestone 1"',  # pylint: disable=line-too-long
+            'gh issue create --title "Another Issue" --body-file "path/to/file.md" --milestone "Milestone 1"',
         ),
         (
             "Milestone with `backticks`",
             "path/to/file.md",
             "Milestone `two`",
-            'gh issue create --title "Milestone with \\`backticks\\`" --body-file "path/to/file.md" --milestone "Milestone \\`two\\`"',  # pylint: disable=line-too-long
+            'gh issue create --title "Milestone with \\`backticks\\`" --body-file "path/to/file.md" --milestone "Milestone \\`two\\`"',  # pylint: disable=line-too-long, useless-suppression
         ),
     ],
 )
