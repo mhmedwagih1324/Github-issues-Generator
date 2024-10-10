@@ -92,7 +92,9 @@ def test_create_issue_body_file(
 
             assert result == expected
 
-            mocked_open.assert_called_once_with(expected, "w")
+            mocked_open.assert_called_once_with(
+                file=expected, mode="w", encoding="utf-8"
+            )
 
             mocked_open().write.assert_called_once_with(issue_body)
 
