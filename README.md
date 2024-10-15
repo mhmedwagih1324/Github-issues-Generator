@@ -2,7 +2,8 @@
 
 **Github Issues Generator** is a command-line tool that helps developers create GitHub issues from a structured `.md` (Markdown) file. Each issue is defined by a title and body, and the tool generates GitHub CLI commands to create these issues programmatically.
 
-A simple use of the generator is this ![pic](https://github.com/user-attachments/assets/3a0d34da-6e18-45b2-aa39-a96ba7149cd7)
+A simple use of the generator is this ![explaining](https://github.com/user-attachments/assets/fc9882b0-3efd-4791-ba9e-379a924dcec4)
+
 
 
 ## Idea Behind
